@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Finder</title>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <style>
+    /*some styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    /* header Styling */
+    #home .ui-header {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+    }
+
+    #home .ui-header h1 {
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    /* refresh button styling */
+    #refresh {
+      background-color: #ff7b00;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    /* event list styling */
+    #places_list li a {
+      font-size: 1.2em;
+      color: #333;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 5px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #places_list li a:hover {
+      background-color: #f8f8f8;
+      color: #004aad;
+    }
+
+    #places_list .ui-li-count {
+      background-color: #004aad;
+      color: white;
+      border-radius: 10px;
+      padding: 3px 10px;
+    }
+
+    /* details page styling */
+    #details .ui-header {
+      background-color: #004aad;
+      color: white;
+    }
+
+    #details h4 {
+      font-size: 1.6em;
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+
+    #details ul li {
+      font-size: 1.2em;
+      padding: 10px;
+    }
+
+    #placeLink a {
+      color: #ff7b00;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    #placeLink a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+  <!-- HOME PAGE -->
+  <div data-role="page" id="home">
+    <div data-role="header">
+      <h1>Events Near Me</h1>
+      <a href="#" id="refresh" data-icon="recycle" class="ui-btn-right">Refresh</a>
+    </div>
+
+    <div data-role="content">
+      <ul id="places_list" data-role="listview"></ul>
+    </div>
+  </div>
+
+  <!-- DETAILS PAGE -->
+  <div data-role="page" id="details">
+    <div data-role="header" data-add-back-btn="true">
+      <h1>Event Details</h1>
+    </div>
+
+    <div data-role="content">
+      <h4 id="placeName"></h4>
+
+      <ul data-role="listview" data-inset="true">
+        <li><span id="placeDate"></span></li>
+        <li><span id="placeTime"></span></li>
+        <li><span id="placeVenue"></span></li>
+        <li><span id="placeLink"></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="mycode.js"></script>
+
+</body>
+</html>
